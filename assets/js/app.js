@@ -176,17 +176,21 @@ function mce_success_cb(resp){
 
 
 //Pushes
-// needs to be a string for jquery.cookie
-var postId = '17'; 
+
+var postId;
 
 $(function()
 {
+
+	$.get('http://ezsendit-launch-counter.herokuapp.com/', function(data){ postId = data; $(".num").html(postId); });	// get this from backend
+
+
 	// initialize pushes
 	$("figure.pushable").pushable();
 
 	// check to see if user has already pushed
 	// fyi cookies do not work when you are viewing this as a file
-	if($.cookie(postId) == 'true') {
+	if($.cookie("pushed") == 'true') {
 		// make push already pushed
 		$("figure.pushable").removeClass("animate").addClass("complete");
 
@@ -214,10 +218,15 @@ $(function()
 		var element = $(this);
 		_gaq.push(['_trackEvent', 'push', 'give']);
 		// ajax'y stuff or whatever you want
-//		console.log("Push'd:", element.data('id'), ":)");
+		// console.log("Push'd:", element.data('id'), ":)");
+		// update count on server
+		$.ajax({
+			url: 'http://ezsendit-launch-counter.herokuapp.com/',
+			type: 'PUT'
+		});
 
 		// set cookie so user cannot push again for 1 day
-		$.cookie(postId, 'true', { expires: 1 });
+		$.cookie("pushed", 'true', { expires: 1 });
 	});
 
 	// after removing a push
@@ -225,9 +234,14 @@ $(function()
 	{
 		var element = $(this);
 		// ajax'y stuff or whatever you want
-//		console.log("Un-push'd:", element.data('id'), ":(");
-
+		// console.log("Un-push'd:", element.data('id'), ":(");
+		// update count on server
+		$.ajax({
+			url: 'http://ezsendit-launch-counter.herokuapp.com/',
+			type: 'DELETE'
+		});
+		
 		// remove cookie
-		$.removeCookie(postId);
+		$.removeCookie("pushed");
 	});
 });
