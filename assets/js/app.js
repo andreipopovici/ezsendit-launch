@@ -199,24 +199,25 @@ $(function()
 	// when pushing
 	$("figure.push").bind("push:active", function(e)
 	{
-		console.log("pushing active");
+//		console.log("pushing active");
 	});
 
 	// when not pushing
 	$("figure.push").bind("push:inactive", function(e)
 	{
-		console.log("pushing inactive");
+//		console.log("pushing inactive");
 	});
 
 	// after push'd
 	$("figure.push").bind("push:added", function(e)
 	{
 		var element = $(this);
+		_gaq.push(['_trackEvent', 'push', 'give']);
 		// ajax'y stuff or whatever you want
-		console.log("Push'd:", element.data('id'), ":)");
+//		console.log("Push'd:", element.data('id'), ":)");
 
-		// set cookie so user cannot push again for 7 days
-		$.cookie(postId, 'true', { expires: 7 });
+		// set cookie so user cannot push again for 1 day
+		$.cookie(postId, 'true', { expires: 1 });
 	});
 
 	// after removing a push
@@ -224,7 +225,7 @@ $(function()
 	{
 		var element = $(this);
 		// ajax'y stuff or whatever you want
-		console.log("Un-push'd:", element.data('id'), ":(");
+//		console.log("Un-push'd:", element.data('id'), ":(");
 
 		// remove cookie
 		$.removeCookie(postId);

@@ -103,6 +103,7 @@ section h2 {
 
 hr {
 	opacity: 0.5;
+	margin-top: 2em;
 }
 
 footer {
@@ -169,6 +170,23 @@ footer {
 .pushbox {
 	text-align: center;
 	position: relative;
+}
+
+.share {
+	text-align: center;
+	
+	span {
+		padding: 10px;
+		
+		a {
+			color: #D17E76;
+			text-decoration: none;
+			
+			i {
+				font-size: 1.5em;
+			}
+		}
+	}
 }
 
 .response {
