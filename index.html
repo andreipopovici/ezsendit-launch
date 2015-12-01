@@ -1,4 +1,95 @@
-<!-- @include _header -->
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+        <!-- Hammer reload -->
+          <script>
+            setInterval(function(){
+              try {
+                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
+                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
+                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
+                window.onbeforeunload = function() { ws = null }
+                ws.onmessage = function(){
+                  var links = document.getElementsByTagName('link');
+                    for (var i = 0; i < links.length;i++) {
+                    var link = links[i];
+                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
+                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
+                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
+                    }
+                  }
+                }
+              }catch(e){}
+            }, 1000)
+          </script>
+        <!-- /Hammer reload -->
+      
+  
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-core.css">
+  <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography.css">
+  <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-responsive.css">
+  
+  <!--link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+  	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+  	/* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+  	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+  </style-->
+  
+  
+  <link rel='stylesheet' href='src/assets/css/style.css'>
+<link rel='stylesheet' href='Build/assets/css/style.css'>
+<link rel='stylesheet' href='Build/src/assets/css/style.css'>
+<link rel='stylesheet' href='src/assets/css/pushes.css'>
+<link rel='stylesheet' href='Build/assets/css/pushes.css'>
+<link rel='stylesheet' href='Build/src/assets/css/pushes.css'>
+  <script src='src/assets/js/jquery-1.8.3.min.js'></script>
+<script src='Build/assets/js/jquery-1.8.3.min.js'></script>
+<script src='Build/src/assets/js/jquery-1.8.3.min.js'></script>
+<script src='src/assets/js/jquery.cookie.js'></script>
+<script src='Build/assets/js/jquery.cookie.js'></script>
+<script src='Build/src/assets/js/jquery.cookie.js'></script>
+<script src='src/assets/js/pushes.js'></script>
+<script src='Build/assets/js/pushes.js'></script>
+<script src='Build/src/assets/js/pushes.js'></script>
+<script src='src/assets/js/app.js'></script>
+<script src='Build/assets/js/app.js'></script>
+<script src='Build/src/assets/js/app.js'></script>
+  
+  <link href="src/assets/favicon.ico" rel="shortcut icon">
+  <link href="src/assets/apple-touch-icon.png" rel="apple-touch-icon">
+  
+  <title>ezsend.it - The easiest way to print a stamp or shipping label for USPS, FedEx and UPS</title>
+  
+</head>
+
+<body>
+	<div class="container csstype">
+
+	  <header>
+	    <nav>
+  <ul>
+    <li></li>
+  </ul>
+</nav>
+	        <span class="logo">
+	        	<span class="icon-stack">
+	        		<i class="icon-circle icon-stack-base"></i>
+	        		<i class="icon-archive icon-light"></i>
+	        	</span><span class="ez">ez</span><span class="send">send</span><span class="it">it</span>
+	        </span>
+	        
+	        <h1 class="title">Skip the lines, save time and money</h1>
+	        <h2 class="subtitle">The absolute easiest way to print a stamp or shipping label. Coming soon.</h3>
+	  </header>
 
   <section>
     <!-- Write your HTML! -->
@@ -35,14 +126,34 @@
 		</div><div class="pure-u-1-3">
 	    	<div class="l-box pushbox">
 	    		<h2>Give us a push</h2>
-	    		<!-- @include _push -->
+	    		<figure class="push pushable" data-id="1">
+	<a class="pushobject">
+		<div class="opening"><div class="circle">&nbsp;</div></div>
+	</a>
+	<a href="#push" class="count">
+		<span class="num">&nbsp;</span>
+		<span class="txt">pushes</span>
+	</a>
+</figure>
 	    		<p>Show your interest and encourage us to finish faster!</p>
 	    	</div>
 	    </div><div class="pure-u-2-3">
 	    	<div class="l-box email">		
 	    		<h2>Sign up for launch notification</h2>
 	    		<p>We'll only email you when we launch.</p>
-	    		<!-- @include _mailchimp -->
+	    		<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+	<form action="http://andreipopovici.us2.list-manage1.com/subscribe/post?u=026407352bb2450819c3ac8ed&amp;id=2ae92998a9" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate pure-form" target="_blank" novalidate>
+		
+		<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+		<button type="submit" class="pure-button pure-button-primary" onclick="_gaq.push(['_trackEvent', 'email', 'signup']);">Notify me</button>
+		<div id="mce-responses" class="clear">
+			<div class="response" id="mce-error-response" style="display:none"></div>
+			<div class="response" id="mce-success-response" style="display:none"></div>
+		</div>		
+	</form>  			
+</div>
+<!--End mc_embed_signup-->
 	    	</div>
 	    </div><div class="pure-u-1">
 	    	<div class="l-box share">
@@ -56,4 +167,31 @@
     </div>
   </section>
   
-<!-- @include _footer -->
+<hr>
+<footer>
+	<span>Designed with <a href="http://purecss.io/" title="Pure CSS Framework by Yahoo!" target="_blank">Pure</a> and <a href="http://fontawesome.io/" title="Font Awesome Icon Font" target="_blank">Font Awesome</a> using <a href="http://hammerformac.com" title="Hammer App for Mac" target="_blank">Hammer</a>. Big thanks to <a href="https://www.easypost.com/" title="easypost - A simple postage API" target="_blank">easypost</a> and <a href="http://mailchimp.com" title="Email marketing by Mailchimp" target="_blank">Mailchimp</a>. Proudly made in Miami, Florida.</span>
+	<p><a href="https://twitter.com/ezsendit" title="ezsend.it on Twitter" target="_blank"><span class="icon-stack"><i class="icon-circle icon-stack-base"></i><i class="icon-twitter icon-light"></i></a></p>
+</footer>
+
+</div><!-- end container -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-43020329-1']);
+  _gaq.push(['_setCampNameKey', 'what']);
+  _gaq.push(['_setCampSourceKey', 'from']);
+  _gaq.push(['_setCampMediumKey', 'via']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+
+</html>
