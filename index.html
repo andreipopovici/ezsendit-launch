@@ -5,35 +5,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-<<<<<<< HEAD
-        <!-- Hammer reload -->
-          <script>
-            setInterval(function(){
-              try {
-                if(typeof ws != 'undefined' && ws.readyState == 1){return true;}
-                ws = new WebSocket('ws://'+(location.host || 'localhost').split(':')[0]+':35353')
-                ws.onopen = function(){ws.onclose = function(){document.location.reload()}}
-                window.onbeforeunload = function() { ws = null }
-                ws.onmessage = function(){
-                  var links = document.getElementsByTagName('link');
-                    for (var i = 0; i < links.length;i++) {
-                    var link = links[i];
-                    if (link.rel === 'stylesheet' && !link.href.match(/typekit/)) {
-                      href = link.href.replace(/((&|\?)hammer=)[^&]+/,'');
-                      link.href = href + (href.indexOf('?')>=0?'&':'?') + 'hammer='+(new Date().valueOf());
-                    }
-                  }
-                }
-              }catch(e){}
-            }, 1000)
-          </script>
-        <!-- /Hammer reload -->
-      
-=======
->>>>>>> ddeb484b66f543dbc0d972764cb07520fa77e506
-  
+
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.2.1/pure-min.css">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="https://rawgithub.com/tilomitra/csstypography/master/css/typography-core.css">
@@ -47,32 +19,6 @@
   	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
   </style-->
   
-  
-<<<<<<< HEAD
-  <link rel='stylesheet' href='src/assets/css/style.css'>
-<link rel='stylesheet' href='Build/assets/css/style.css'>
-<link rel='stylesheet' href='Build/src/assets/css/style.css'>
-<link rel='stylesheet' href='src/assets/css/pushes.css'>
-<link rel='stylesheet' href='Build/assets/css/pushes.css'>
-<link rel='stylesheet' href='Build/src/assets/css/pushes.css'>
-  <script src='src/assets/js/jquery-1.8.3.min.js'></script>
-<script src='Build/assets/js/jquery-1.8.3.min.js'></script>
-<script src='Build/src/assets/js/jquery-1.8.3.min.js'></script>
-<script src='src/assets/js/jquery.cookie.js'></script>
-<script src='Build/assets/js/jquery.cookie.js'></script>
-<script src='Build/src/assets/js/jquery.cookie.js'></script>
-<script src='src/assets/js/pushes.js'></script>
-<script src='Build/assets/js/pushes.js'></script>
-<script src='Build/src/assets/js/pushes.js'></script>
-<script src='src/assets/js/app.js'></script>
-<script src='Build/assets/js/app.js'></script>
-<script src='Build/src/assets/js/app.js'></script>
-  
-  <link href="src/assets/favicon.ico" rel="shortcut icon">
-  <link href="src/assets/apple-touch-icon.png" rel="apple-touch-icon">
-  
-  <title>ezsend.it - The easiest way to print a stamp or shipping label for USPS, FedEx and UPS</title>
-=======
   <link rel='stylesheet' href='c43543aac880ac5ccb9c30f730777ff6.css'>
   <script src='ec831b71a63e4b96cbb6925c41292735.js'></script>
   
@@ -81,7 +27,6 @@
   
   <title>ezsend.it - The easiest way to print a stamp or shipping label for USPS, FedEx and UPS</title>
   <meta property="og:image" content="http://ezsend.it/assets/logo.png" />
->>>>>>> ddeb484b66f543dbc0d972764cb07520fa77e506
   
 </head>
 
@@ -208,8 +153,5 @@
 
 </body>
 
-<<<<<<< HEAD
+
 </html>
-=======
-</html>
->>>>>>> ddeb484b66f543dbc0d972764cb07520fa77e506
